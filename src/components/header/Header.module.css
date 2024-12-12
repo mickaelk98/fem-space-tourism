@@ -109,9 +109,3 @@ nav::before {
         padding: 50px 0;
     }
 }
-
-@media  (max-width: 576px) {
-    .header {
-        padding: 25px;
-    }
-}
