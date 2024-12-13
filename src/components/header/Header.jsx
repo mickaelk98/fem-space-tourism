@@ -3,9 +3,11 @@ import logo from "../../assets/shared/logo.svg";
 import hamburgerMenu from "../../assets/shared/icon-hamburger.svg";
 import NavMobile from "../headerMobile/NavMobile";
 import { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 
 function Header() {
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const pathname = useLocation().pathname;
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,17 +37,45 @@ function Header() {
         </div>
         <nav className={styles.nav}>
           <ul>
-            <li>
-              <span>00</span> Home
+            <li
+              style={
+                pathname === "/" ? { borderBottom: "3px solid white" } : {}
+              }
+            >
+              <Link to="/">
+                <span>00</span> Home
+              </Link>
             </li>
-            <li>
-              <span>01</span> Destination
+            <li
+              style={
+                pathname === "/destination"
+                  ? { borderBottom: "3px solid white" }
+                  : {}
+              }
+            >
+              <Link to="/destination">
+                <span>01</span> Destination
+              </Link>
             </li>
-            <li>
-              <span>02</span> Crew
+            <li
+              style={
+                pathname === "/crew" ? { borderBottom: "3px solid white" } : {}
+              }
+            >
+              <Link to="/crew">
+                <span>02</span> Crew
+              </Link>
             </li>
-            <li>
-              <span>03</span> technology
+            <li
+              style={
+                pathname === "/technology"
+                  ? { borderBottom: "3px solid white" }
+                  : {}
+              }
+            >
+              <Link to="/technology">
+                <span>03</span> technology
+              </Link>
             </li>
           </ul>
         </nav>
