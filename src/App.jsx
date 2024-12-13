@@ -23,53 +23,62 @@ function App() {
   const location = useLocation();
   const pathname = location.pathname;
 
-  document.body.style.background = `url(${homeBgDesktop}) center/cover`;
+  const getBackgroundImage = (width, path) => {
+    // mobile
+    if (width <= 576) {
+      switch (path) {
+        case "/":
+          return homeBgMobile;
+        case "/crew":
+          return crewBgMobile;
+        case "/destination":
+          return destinationBgMobile;
+        default:
+          return technologyBgMobile;
+      }
+    }
+    // tablet
+    else if (width > 576 && width <= 992) {
+      switch (path) {
+        case "/":
+          return homeBgTablet;
+        case "/crew":
+          return crewBgTablet;
+        case "/destination":
+          return destinationBgTablet;
+        default:
+          return technologyBgTablet;
+      }
+    }
+    // desktop
+    else {
+      switch (path) {
+        case "/":
+          return homeBgDesktop;
+        case "/crew":
+          return crewBgDesktop;
+        case "/destination":
+          return destinationBgDesktop;
+        default:
+          return technologyBgDesktop;
+      }
+    }
+  };
+
+  const updateBackground = () => {
+    const backgroundImage = getBackgroundImage(window.innerWidth, pathname);
+    document.body.style.background = `url(${backgroundImage}) center/cover`;
+  };
+
+  // Initial background
   useEffect(() => {
-    const handleResize = () => {
-      document.body.style.background = "none";
-      //mobile
-      if (window.innerWidth <= 576) {
-        if (pathname === "/") {
-          document.body.style.background = `url(${homeBgMobile}) center/cover`;
-        } else if (pathname === "/crew") {
-          document.body.style.background = `url(${crewBgMobile}) center/cover`;
-        } else if (pathname === "/destination") {
-          document.body.style.background = `url(${destinationBgMobile}) center/cover`;
-        } else {
-          document.body.style.background = `url(${technologyBgMobile}) center/cover`;
-        }
-      }
-      //tablet
-      else if (window.innerWidth > 576 && window.innerWidth <= 992) {
-        if (pathname === "/") {
-          document.body.style.background = `url(${homeBgTablet}) center/cover`;
-        } else if (pathname === "/crew") {
-          document.body.style.background = `url(${crewBgTablet}) center/cover`;
-        } else if (pathname === "/destination") {
-          document.body.style.background = `url(${destinationBgTablet}) center/cover`;
-        } else {
-          document.body.style.background = `url(${technologyBgTablet}) center/cover`;
-        }
-      }
-      //desktop
-      else {
-        if (pathname === "/") {
-          document.body.style.background = `url(${homeBgDesktop}) center/cover`;
-        } else if (pathname === "/crew") {
-          document.body.style.background = `url(${crewBgDesktop}) center/cover`;
-        } else if (pathname === "/destination") {
-          document.body.style.background = `url(${destinationBgDesktop}) center/cover`;
-        } else {
-          document.body.style.background = `url(${technologyBgDesktop}) center/cover`;
-        }
-      }
-    };
+    updateBackground();
+  }, [pathname]);
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+  // Update on resize
+  useEffect(() => {
+    window.addEventListener("resize", updateBackground);
+    return () => window.removeEventListener("resize", updateBackground);
   }, [pathname]);
 
   return (
