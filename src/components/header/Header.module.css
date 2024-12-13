@@ -99,6 +99,11 @@ nav::before {
         justify-content: center;
         justify-items: center;
     }
+
+    .hamburgerMenu:hover {
+        cursor: pointer;
+    }
+
     .nav {
         display: none;
     }
