@@ -1,0 +1,156 @@
+.container  {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.container h1 {
+    text-transform: uppercase;
+    font-size: 27px;
+    color: white;
+    margin-top: 70px;
+}
+
+.container h1 span {
+    color: gray;
+}
+
+.global {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.information {
+   margin-bottom: 70px;
+}
+
+.job {
+    color: gray;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.information h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: gray;
+    line-height: 20px;
+    max-width: 370px;
+}
+
+.select {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+    max-width: 150px;
+}
+
+.select span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: gray;
+}
+
+.select span:hover {
+    cursor: pointer;
+}
+
+@media  (max-width: 1200px) {
+    .container  {
+        width: 90%;
+    }
+}
+
+
+@media  (max-width: 992px) {
+
+    .container h1 {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    .information {
+        margin-bottom: 30px;
+        min-width: 270px;
+    }
+
+    .information h2 {
+        font-size: 30px;
+    }
+
+    .description {
+        max-width: 400px;
+    }
+
+    .select {
+        margin-top: 70px;
+    }
+
+
+    .profil img {
+        max-width: 400px;
+    }
+}
+
+@media  (max-width: 768px) {
+
+    .container {
+        width: 85%;
+    }
+
+    .container h1 {
+        margin: 70px 0;
+    }
+
+    .global {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .information {
+        text-align: center;
+    }
+
+    .select {
+        max-width: none;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .description {
+        max-width: 550px;
+    }
+}
+
+@media  (max-width: 576px) { 
+    .container h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .information h2 {
+        font-size: 27px;
+    }
+
+    .profil img {
+        max-width: 300px;
+    }
+}
