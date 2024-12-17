@@ -27,7 +27,9 @@ function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
         <div
           onClick={() => setShowMobileNav(true)}
