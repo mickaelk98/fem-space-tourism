@@ -52,14 +52,10 @@ function Technology() {
   }
 
   function updateTechnologyImage(number) {
-    console.log("ecran :", window.innerWidth);
-
     if (window.innerWidth > 768) {
       setTechnologyPicture(data[number].images.portrait);
-      //console.log("image portrait :", data[number].images.portrait);
     } else {
       setTechnologyPicture(data[number].images.landscape);
-      //console.log("image paysage :", data[number].images.landscape);
     }
   }
 
