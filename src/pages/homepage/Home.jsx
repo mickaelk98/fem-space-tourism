@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 
 function Home() {
@@ -16,7 +17,9 @@ function Home() {
         </p>
       </div>
       <div className={styles.cta}>
-        <button>Explore</button>
+        <Link to="/destination">
+          <button>Explore</button>
+        </Link>
       </div>
     </main>
   );
