@@ -1,0 +1,152 @@
+.container  {
+    width: 90%;
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.container h1 {
+    text-transform: uppercase;
+    font-size: 27px;
+    color: white;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.container h1 span {
+    color: gray;
+}
+
+.global {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.information {
+    display: flex;
+    min-height: 200px;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+
+.select span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.select span:hover {
+    background: white;
+    color: black;
+}
+
+.subtitle {
+    color: gray;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.name {
+    color: white;
+    text-transform: uppercase;
+    font-size: 44px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: gray;
+    line-height: 20px;
+    font-size: 18px;
+    max-width: 450px;
+}
+
+@media  (max-width: 1200px) {
+    .container h1 {
+        font-size: 24px;
+    }
+
+    .information {
+        width: 80%;
+    }
+
+    .picture img {
+        max-width: 400px;
+    }
+}
+
+@media  (max-width: 768px) {
+    .container  {
+        width: 100%;
+    }
+
+    .container h1 {
+        margin-left: 60px;
+        margin-bottom: 80px;
+    }
+
+    .global {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .information {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .description {
+        max-width: none;
+    }
+
+    .select {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+    } 
+    
+    .name {
+        font-size: 35px;
+    }
+
+    .picture img {
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media  (max-width: 576px) {
+    .container h1 {
+        margin-left: 0;
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .information {
+        width: 90%;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+}

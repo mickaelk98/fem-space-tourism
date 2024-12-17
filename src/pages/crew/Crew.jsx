@@ -37,7 +37,7 @@ function Crew() {
   return (
     <main className={styles.container}>
       <h1>
-        <span>01</span> meet your crew
+        <span>02</span> meet your crew
       </h1>
       <section className={styles.global}>
         <div className={styles.information}>
